@@ -1,6 +1,7 @@
-﻿# Expense Tracker (Flutter)
+﻿@"
+# Expense Tracker (Flutter)
 
-A cross-platform expense tracking app built with Flutter.
+A learning-focused Flutter app to practice essentials: add/remove expenses, responsive UI with **MediaQuery**, **nested widgets**, and app-wide **theming**.
 
 ## Screenshots
 <!-- Add images later: docs/screenshots/... -->
@@ -9,14 +10,16 @@ A cross-platform expense tracking app built with Flutter.
 - Add, edit, delete expenses
 - Categories & charts
 - Local persistence
-- Responsive UI
+- Responsive UI (MediaQuery, LayoutBuilder)
+- Clean nested widget composition
+- Centralized theming with ThemeData/ColorScheme
 
 ## Tech
-- Flutter (stable), Dart
-- State management: setState / Provider / (your choice)
-- Storage: (e.g., sqflite / Hive)
+- Flutter 3.32 (stable), Dart 3.8
+- State management: setState / Provider (update to what you use)
+- Storage: sqflite / Hive (update to what you use)
 
 ## Getting Started
-`ash
+```bash
 flutter pub get
 flutter run
