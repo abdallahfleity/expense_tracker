@@ -3,17 +3,36 @@ on:
   push:
     tags:
       - "v*.*.*"
+
+# allow the workflow to create a Release and upload assets
+permissions:
+  contents: write
+
 jobs:
   build-release-apk:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+
+      # Ensure Java 17 (AGP 8.x requires it)
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: "17"
+
+      # Install Flutter (stable)
       - uses: subosito/flutter-action@v2
         with:
           channel: stable
+
       - run: flutter --version
+      - run: java -version
       - run: flutter pub get
-      - run: flutter build apk --release
+
+      # Build release APK (no keystore needed for attaching to Release)
+      - run: flutter build apk --release --no-shrink
+
+      # Create GitHub Release and attach APK
       - name: Create Release
         uses: softprops/action-gh-release@v2
         with:
