@@ -1,0 +1,26 @@
+﻿# Flutter / Dart
+.dart_tool/
+.packages
+.pub-cache/
+flutter_export_environment.sh
+
+# Build outputs
+build/
+coverage/
+
+# IDEs
+.vscode/
+.idea/
+
+# Android signing & services
+android/key.properties
+**/*.jks
+android/app/google-services.json
+
+# iOS services / CocoaPods
+ios/Runner/GoogleService-Info.plist
+ios/Pods/
+
+# Fastlane / local artifacts
+fastlane/report.xml
+*.keystore
